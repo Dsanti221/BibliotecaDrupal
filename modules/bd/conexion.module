@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Implementación de mi módulo personalizado.
+ */
+
+/**
+ * Implementa el hook_menu()
+ */
+function mi_modulo_menu() {
+  $items = array();
+  $items['mi-ruta'] = array(
+    'title' => 'Mi título',
+    'page callback' => 'mi_modulo_mi_pagina',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implementa una página personalizada
+ */
+function mi_modulo_mi_pagina() {
+  return 'Mi contenido personalizado';
+}
